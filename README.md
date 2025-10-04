@@ -29,20 +29,20 @@ A fullstack application combining Challenge A (Next.js Frontend) and Challenge C
 ## Features
 
 ### Frontend (Next.js + TypeScript)
-- ✅ 5-question solar survey form with validation
-- ✅ Responsive design with Tailwind CSS
-- ✅ Results page with personalized recommendations
-- ✅ Optional contact form for follow-up
-- ✅ API integration with error handling
-- ✅ TypeScript for type safety
+-  5-question solar survey form with validation
+-  Responsive design with Tailwind CSS
+-  Results page with personalized recommendations
+-  Optional contact form for follow-up
+-  API integration with error handling
+-  TypeScript for type safety
 
 ### Backend (NestJS + TypeScript)
-- ✅ REST API for survey management
-- ✅ File-based JSON storage (no database required)
-- ✅ Input validation with class-validator
-- ✅ Unit tests for all modules
-- ✅ E2E tests for API endpoints
-- ✅ CORS enabled for frontend integration
+-  REST API for survey management
+-  File-based JSON storage (no database required)
+-  Input validation with class-validator
+-  Unit tests for all modules
+-  E2E tests for API endpoints
+-  CORS enabled for frontend integration
 
 ## Quick Start
 
@@ -180,33 +180,19 @@ NEXT_PUBLIC_API_URL=http://localhost:3001
 
 ## Challenge Requirements Fulfilled
 
-### Challenge A Requirements ✅
-- ✅ Next.js with App Router and TypeScript
-- ✅ 5-question survey form with validation
-- ✅ Optional contact form
-- ✅ API endpoint integration (/api/submit)
-- ✅ Random Yes/No recommendation
-- ✅ Results page display
+### Challenge A Requirements 
+-  Next.js with App Router and TypeScript
+-  5-question survey form with validation
+-  Optional contact form
+-  API endpoint integration (/api/submit)
+-  Random Yes/No recommendation
+-  Results page display
 
-### Challenge C Requirements ✅
-- ✅ NestJS backend with TypeScript
-- ✅ File-based JSON storage
-- ✅ All CRUD endpoints (POST, GET, DELETE)
-- ✅ Input validation
-- ✅ Unit tests for SurveyModule and DatabaseModule
-- ✅ End-to-end tests
-
-## Contributing
-
-This project was created as a coding challenge demonstrating:
-- Full-stack TypeScript development
-- Modern React patterns with Next.js
-- NestJS backend architecture
-- Form validation and API integration
-- Responsive UI design
-- Comprehensive testing
-
-## Contact
-
-For questions about this implementation:
-- Email: produktentwicklung@schoenergie.de
+### Challenge C Requirements 
+-  NestJS backend with TypeScript
+-  File-based JSON storage
+-  All CRUD endpoints (POST, GET, DELETE)
+-  Input validation
+-  Unit tests for SurveyModule and DatabaseModule
+- 
+- End-to-end tests
