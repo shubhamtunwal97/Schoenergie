@@ -1,90 +1,90 @@
 # Schoenergie Solar Survey App
 
-A fullstack application combining Challenge A (Next.js Frontend) and Challenge C (NestJS Backend) for a solar panel assessment survey.
+Eine Fullstack-Anwendung, die Challenge A (Next.js Frontend) und Challenge C (NestJS Backend) für eine Solarpanel-Bewertungsumfrage kombiniert.
 
-## Project Structure
+## Projektstruktur
 
 ```
 ├── frontend/                    # Next.js App (Challenge A)
 │   ├── src/
-│   │   ├── app/                # App Router pages
-│   │   ├── components/         # React components
-│   │   ├── lib/               # Utilities and validation
-│   │   └── types/             # TypeScript types
+│   │   ├── app/                # App Router Seiten
+│   │   ├── components/         # React Komponenten
+│   │   ├── lib/               # Utilities und Validierung
+│   │   └── types/             # TypeScript Typen
 │   ├── package.json
 │   ├── tailwind.config.js
 │   └── tsconfig.json
 ├── backend/                     # NestJS API (Challenge C)
 │   ├── src/
-│   │   ├── survey/            # Survey module
-│   │   ├── database/          # File-based storage
+│   │   ├── survey/            # Survey Modul
+│   │   ├── database/          # Dateibasierte Speicherung
 │   │   └── main.ts
-│   ├── test/                  # E2E tests
+│   ├── test/                  # E2E Tests
 │   ├── package.json
 │   └── tsconfig.json
-├── package.json                 # Root package with scripts
+├── package.json                 # Root Package mit Scripts
 └── README.md
 ```
 
-## Features
+## Funktionen
 
 ### Frontend (Next.js + TypeScript)
--  5-question solar survey form with validation
--  Responsive design with Tailwind CSS
--  Results page with personalized recommendations
--  Optional contact form for follow-up
--  API integration with error handling
--  TypeScript for type safety
+- 5-Fragen Solar-Umfrage-Formular mit Validierung
+- Responsive Design mit Tailwind CSS
+- Ergebnisseite mit personalisierten Empfehlungen
+- Optionales Kontaktformular für Nachfragen
+- API-Integration mit Fehlerbehandlung
+- TypeScript für Typsicherheit
 
 ### Backend (NestJS + TypeScript)
--  REST API for survey management
--  File-based JSON storage (no database required)
--  Input validation with class-validator
--  Unit tests for all modules
--  E2E tests for API endpoints
--  CORS enabled for frontend integration
+- REST API für Umfrage-Management
+- Dateibasierte JSON-Speicherung (keine Datenbank erforderlich)
+- Input-Validierung mit class-validator
+- Unit Tests für alle Module
+- E2E Tests für API-Endpunkte
+- CORS aktiviert für Frontend-Integration
 
-## Quick Start
+## Schnellstart
 
-### Prerequisites
+### Voraussetzungen
 - Node.js 18+
-- npm or yarn
+- npm oder yarn
 
-### 1. Install Dependencies
+### 1. Abhängigkeiten installieren
 ```bash
-# Install all dependencies for both frontend and backend
+# Alle Abhängigkeiten für Frontend und Backend installieren
 npm run install:all
 
-# Or install manually:
+# Oder manuell installieren:
 cd backend && npm install
 cd ../frontend && npm install
 ```
 
-### 2. Start Development Servers
+### 2. Entwicklungsserver starten
 ```bash
-# Start both frontend and backend concurrently
+# Frontend und Backend gleichzeitig starten
 npm run dev
 
-# Or start separately:
-npm run dev:backend  # Runs on http://localhost:3001
-npm run dev:frontend # Runs on http://localhost:3000
+# Oder separat starten:
+npm run dev:backend  # Läuft auf http://localhost:3001
+npm run dev:frontend # Läuft auf http://localhost:3000
 ```
 
-### 3. Access the Application
+### 3. Anwendung aufrufen
 - Frontend: http://localhost:3000
 - Backend API: http://localhost:3001
-- Survey form will be available at the root URL
+- Umfrage-Formular ist unter der Root-URL verfügbar
 
-## API Endpoints
+## API Endpunkte
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/api/survey/submit` | Submit new survey |
-| `GET` | `/api/survey` | Get all surveys |
-| `GET` | `/api/survey/:id` | Get survey by ID |
-| `DELETE` | `/api/survey/:id` | Delete survey |
+| Methode | Endpunkt | Beschreibung |
+|---------|----------|---------------|
+| `POST` | `/api/survey/submit` | Neue Umfrage einreichen |
+| `GET` | `/api/survey` | Alle Umfragen abrufen |
+| `GET` | `/api/survey/:id` | Umfrage nach ID abrufen |
+| `DELETE` | `/api/survey/:id` | Umfrage löschen |
 
-### Example API Request
+### Beispiel API Anfrage
 ```bash
 curl -X POST http://localhost:3001/api/survey/submit \
   -H "Content-Type: application/json" \
@@ -102,97 +102,111 @@ curl -X POST http://localhost:3001/api/survey/submit \
   }'
 ```
 
-## Testing
+## Tests
 
-### Run Backend Tests
+### Backend Tests ausführen
 ```bash
-# Unit tests
+# Unit Tests
 npm run test:backend
 
-# E2E tests
+# E2E Tests
 npm run test:e2e
 
-# Test coverage
+# Test Coverage
 cd backend && npm run test:cov
 ```
 
-## Survey Questions
+## Umfrage-Fragen
 
-1. **Property Type** (Required)
+1. **Immobilientyp** (Pflichtfeld)
    - Einfamilienhaus, Mehrfamilienhaus, Gewerbeimmobilie
 
-2. **Roof Orientation** (Required, Multiple Choice)
+2. **Dachausrichtung** (Pflichtfeld, Mehrfachauswahl)
    - Süd, West, Ost, Nord, Keine Angabe
 
-3. **Roof Age** (Required)
+3. **Dachalter** (Pflichtfeld)
    - Unter 5 Jahre, 5–15 Jahre, Über 15 Jahre, Keine Angabe
 
-4. **Annual Electricity Consumption** (Required)
+4. **Jährlicher Stromverbrauch** (Pflichtfeld)
    - Unter 3.000 kWh, 3.000–5.000 kWh, Über 5.000 kWh, Keine Angabe
 
-5. **Interest in Other Energy Solutions** (Required)
+5. **Interesse an anderen Energielösungen** (Pflichtfeld)
    - Ja, Nein, Weiß nicht
 
-6. **Contact Information** (Optional)
-   - Name, Email, Phone
+6. **Kontaktinformationen** (Optional)
+   - Name, E-Mail, Telefon
 
-## Build for Production
+## Produktions-Build
 
 ```bash
-# Build both frontend and backend
+# Frontend und Backend für Produktion bauen
 npm run build
 
-# Start production servers
+# Produktionsserver starten
 npm run start
 ```
 
-## Data Storage
+## Datenspeicherung
 
-Survey data is stored in `backend/data/surveys.json` as a JSON file. Each survey includes:
-- Unique ID (UUID)
-- All survey responses
-- Random recommendation (Ja/Nein)
-- Timestamp
-- Optional contact information
+Umfrage-Daten werden in `backend/data/surveys.json` als JSON-Datei gespeichert. Jede Umfrage enthält:
+- Eindeutige ID (UUID)
+- Alle Umfrage-Antworten
+- Zufällige Empfehlung (Ja/Nein)
+- Zeitstempel
+- Optionale Kontaktinformationen
 
-## Environment Variables
+## Umgebungsvariablen
 
 ### Frontend (.env.local)
 ```
 NEXT_PUBLIC_API_URL=http://localhost:3001
 ```
 
-## Technology Stack
+## Technologie-Stack
 
 ### Frontend
-- **Next.js 14** with App Router
-- **React 18** with TypeScript
-- **Tailwind CSS** for styling
-- **React Hook Form** with Zod validation
-- **Responsive design** for mobile/desktop
+- **Next.js 14** mit App Router
+- **React 18** mit TypeScript
+- **Tailwind CSS** für Styling
+- **React Hook Form** mit Zod Validierung
+- **Responsive Design** für Mobil/Desktop
 
 ### Backend
-- **NestJS 10** with TypeScript
-- **File-based JSON storage**
-- **Class Validator** for DTO validation
-- **Jest** for testing
-- **UUID** for unique IDs
+- **NestJS 10** mit TypeScript
+- **Dateibasierte JSON-Speicherung**
+- **Class Validator** für DTO-Validierung
+- **Jest** für Tests
+- **UUID** für eindeutige IDs
 
-## Challenge Requirements Fulfilled
+## Erfüllte Challenge-Anforderungen
 
-### Challenge A Requirements 
--  Next.js with App Router and TypeScript
--  5-question survey form with validation
--  Optional contact form
--  API endpoint integration (/api/submit)
--  Random Yes/No recommendation
--  Results page display
+### Challenge A Anforderungen
+- Next.js mit App Router und TypeScript
+- 5-Fragen Umfrage-Formular mit Validierung
+- Optionales Kontaktformular
+- API-Endpunkt Integration (/api/submit)
+- Zufällige Ja/Nein Empfehlung
+- Ergebnisseiten-Anzeige
 
-### Challenge C Requirements 
--  NestJS backend with TypeScript
--  File-based JSON storage
--  All CRUD endpoints (POST, GET, DELETE)
--  Input validation
--  Unit tests for SurveyModule and DatabaseModule
-- 
-- End-to-end tests
+### Challenge C Anforderungen
+- NestJS Backend mit TypeScript
+- Dateibasierte JSON-Speicherung
+- Alle CRUD-Endpunkte (POST, GET, DELETE)
+- Input-Validierung
+- Unit Tests für SurveyModule und DatabaseModule
+- End-to-End Tests
+
+## Mitwirkung
+
+Dieses Projekt wurde als Coding-Challenge erstellt und demonstriert:
+- Full-Stack TypeScript-Entwicklung
+- Moderne React-Patterns mit Next.js
+- NestJS Backend-Architektur
+- Formular-Validierung und API-Integration
+- Responsive UI-Design
+- Umfassende Tests
+
+## Kontakt
+
+Für Fragen zu dieser Implementierung:
+- E-Mail: produktentwicklung@schoenergie.de
